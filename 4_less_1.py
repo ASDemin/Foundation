@@ -6,6 +6,6 @@ def info():
     name = input('Введите имя?')
     age = input ('Сколько Вам лет?')
     city = input ('Откуда Вы?')
-    print(name +',' +age+' года'+', проживает в городе '+ city)
-
-info()
+    information = (name +',' +age+' года'+', проживает в городе '+ city)
+    return information
+print (info())
