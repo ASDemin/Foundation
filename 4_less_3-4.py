@@ -22,32 +22,40 @@
 
 
 '''
-player={
-    'damage':15,
-    'health':70,
-    'armor':1.2
-}
-enemy={
-    'damage':10,
-    'health':100,
+player = {
+    'damage': 55,
+    'health': 70,
     'armor': 1.2
 }
+enemy = {
+    'damage': 40,
+    'health': 100,
+    'armor': 1.2
+}
+dmg=0
+def damage(a):
+    if a in player:
+        dmg=enemy['damage'] / player['armor']
+    else:
+        dmg=player['damage'] / enemy['armor']
+        return dmg
+
 def attack(a):
     if a in player:
-        player['health']-=enemy['damage']/player['armor']
+        player['health'] -= damage(a)
     else:
-        enemy['health']-=player['damage']/enemy['armor']
+        enemy['health'] -= damage(a)
 
-player['name']=input('Введите имя 1 игрока: ')
-enemy['name']=input('Введите имя 2 игрока: ')
 
-while player['health'] >=0:
-        if enemy['health']<=0:
-            print ('Победил {}'.format(player['name']))
-            break
-        else:
-            attack(input('Чей удар? Введите имя: '))
-            print ((player['health']),(enemy['health']))
+player['name'] = input('Введите имя 1 игрока: ')
+enemy['name'] = input('Введите имя 2 игрока: ')
+
+while player['health'] >= 0:
+    if enemy['health'] <= 0:
+        print('Победил {}'.format(player['name']))
+        break
+    else:
+        attack(input('Чей удар? Введите имя: '))
+        print((player['health']), (enemy['health']))
 else:
     print('Победил {}'.enemy(player['name']))
-   
