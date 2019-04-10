@@ -8,7 +8,11 @@ list =[1,2,3,4]
 def rnd():
     dlina=len(list)
     number=random.randint(1,dlina)
-    e=(list[number-1])
+    if list==null:
+        e='None'
+    else:    
+        e=(list[number-1])
+    
     return e
 
 print (rnd())
